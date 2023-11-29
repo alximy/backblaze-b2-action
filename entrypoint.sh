@@ -24,5 +24,5 @@ fi
 
 b2 authorize-account ${B2_APPKEY_ID} ${B2_APPKEY}
 # b2 sync --incrementalMode  --delete --excludeDirRegex '.git' --replaceNewer  ${SOURCE_DIR} ${B2_BUCKET}
-b2 sync --excludeDirRegex '.git' --replaceNewer --compareVersions --incrementalMode ${SOURCE_DIR} ${B2_BUCKET}
+b2 sync --compareVersions {modTime,size} --incrementalMode --excludeDirRegex '.git' --replaceNewer ${SOURCE_DIR} ${B2_BUCKET}
 b2 clear-account
