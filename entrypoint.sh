@@ -23,6 +23,5 @@ if [ -z "$SOURCE_DIR" ]; then
 fi
 
 b2 authorize-account ${B2_APPKEY_ID} ${B2_APPKEY}
-# b2 sync --delete --excludeDirRegex '.git' --replaceNewer  ${SOURCE_DIR} ${B2_BUCKET}
-b2 sync --incrementalMode --excludeDirRegex '.git' --replaceNewer ${SOURCE_DIR} ${B2_BUCKET}
+b2 sync --compareVersions 'none' --delete --excludeDirRegex '.git' --replaceNewer  ${SOURCE_DIR} ${B2_BUCKET}
 b2 clear-account
