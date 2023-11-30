@@ -11,7 +11,8 @@ LABEL homepage="https://alximy.io/"
 LABEL maintainer="alximy <hello@alximy.io>"
 
 # https://github.com/Backblaze/B2_Command_Line_Tool/releases
-ENV B2CLI_VERSION="1.4.0"
+# ENV B2CLI_VERSION="1.4.0"
+ENV B2CLI_VERSION="3.13.1"
 
 RUN pip install --quiet --no-cache-dir b2==${B2CLI_VERSION}
 
